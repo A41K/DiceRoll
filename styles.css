@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background: #1a1a1a;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-direction: row; /* Change back to normal left-to-right flow */
+    justify-content: flex-start;
+}
+
+.hamburger-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.main-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: calc(100vh - 40px);
+    padding: 20px 0;
+}
+
+.dice {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.song-inventory {
+    position: fixed;
+    left: -320px;
+    top: 0;
+    height: 100vh;
+    width: 300px;
+    background: #2a2a2a;
+    padding: 60px 20px 20px;
+    transition: left 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.hamburger-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: left 0.3s ease;
+}
+
+.hamburger-button.active {
+    left: 340px;
+}
+
+.hamburger-button:hover {
+    background: #3a3a3a;
+}
+
+.song-inventory {
+    position: fixed;
+    left: -320px;
+    top: 0;
+    height: 100vh;
+    width: 300px;
+    background: #2a2a2a;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.song-inventory.active {
+    left: 0;
+}
+
+.main-area {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Add overlay for when menu is open */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.main-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.song-display {
+    background: #000000;
+    padding: 20px;
+    border-radius: 15px;
+    width: 200px;
+    text-align: center;
+    border: 2px solid #ffffff;
+}
+
+.song-name {
+    color: #ffffff;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.artist-name {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.album-cover {
+    width: 200px;
+    height: 200px;
+    background: #333;
+    margin: 0 auto 20px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+}
+
+.dice {
+    font-size: 48px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2a2a2a;
+    border-radius: 10px;
+}
+
+.dice:hover {
+    transform: scale(1.1);
+}
+
+.dice.rolling {
+    animation: roll 0.5s linear infinite;
+}
+
+@keyframes roll {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.inventory-item {
+    background: #333;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.inventory-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+}

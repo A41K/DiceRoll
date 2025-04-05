@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Randomizer v2.0</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="hamburger-button">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="container">
+        <div class="song-inventory">
+            <h2>Song Inventory</h2>
+            <div id="inventory-list"></div>
+        </div>
+        
+        <div class="main-area">
+            <div id="current-song" class="song-display">
+                <div class="album-cover"></div>
+                <div class="song-info">
+                    <h3 class="song-name">Roll the dice!</h3>
+                    <p class="artist-name"></p>
+                </div>
+            </div>
+            
+            <div id="dice" class="dice">
+                <i class="fa-solid fa-dice-six"></i>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
