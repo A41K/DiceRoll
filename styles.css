@@ -125,21 +125,11 @@ body {
     width: 200px;
     text-align: center;
     border: 2px solid #ffffff;
-}
-
-.song-name {
-    color: #ffffff;
-    font-size: 24px;
-    margin: 10px 0;
-}
-
-.artist-name {
-    color: #ffffff;
-    font-size: 18px;
-    margin: 5px 0;
+    position: relative;
 }
 
 .album-cover {
+    position: relative;
     width: 200px;
     height: 200px;
     background: #333;
@@ -147,6 +137,220 @@ body {
     border-radius: 5px;
     background-size: cover;
     background-position: center;
+}
+
+.album-cover::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border-radius: 10px;
+    z-index: -1;
+    filter: brightness(1.5) blur(3px);
+}
+
+.rarity-common .album-cover::before {
+    background: linear-gradient(45deg, #ffffff, #e0e0e0, #ffffff);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+    animation: glint-common 3s ease-in-out infinite;
+}
+
+.rarity-uncommon .album-cover::before {
+    background: linear-gradient(45deg, #69F0AE, #81C784, #69F0AE);
+    box-shadow: 0 0 30px rgba(76, 175, 80, 0.9);
+    animation: glint-uncommon 3s ease-in-out infinite;
+}
+
+.rarity-rare .album-cover::before {
+    background: linear-gradient(45deg, #40C4FF, #90CAF9, #40C4FF);
+    box-shadow: 0 0 35px rgba(33, 150, 243, 0.9);
+    animation: glint-rare 3s ease-in-out infinite;
+}
+
+@keyframes glint-common {
+    0% { transform: rotate(0deg); opacity: 0.7; }
+    50% { transform: rotate(180deg); opacity: 1; }
+    100% { transform: rotate(360deg); opacity: 0.7; }
+}
+
+@keyframes glint-uncommon {
+    0% { transform: rotate(0deg); opacity: 0.8; }
+    50% { transform: rotate(180deg); opacity: 1; }
+    100% { transform: rotate(360deg); opacity: 0.8; }
+}
+
+@keyframes glint-rare {
+    0% { transform: rotate(0deg); opacity: 0.9; }
+    50% { transform: rotate(180deg); opacity: 1; }
+    100% { transform: rotate(360deg); opacity: 0.9; }
+}
+
+.album-cover::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 7px;
+    z-index: -1;
+}
+
+.rarity-common .album-cover::after {
+    background: linear-gradient(45deg, #ffffff, #c0c0c0);
+    animation: glint-common 2s infinite;
+}
+
+.rarity-uncommon .album-cover::after {
+    background: linear-gradient(45deg, #4CAF50, #81C784);
+    animation: glint-uncommon 2s infinite;
+}
+
+.rarity-rare .album-cover::after {
+    background: linear-gradient(45deg, #2196F3, #90CAF9);
+    animation: glint-rare 2s infinite;
+}
+
+@keyframes glint-common {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.3; }
+}
+
+@keyframes glint-uncommon {
+    0% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.4; }
+}
+
+@keyframes glint-rare {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.rarity-legendary .album-cover::before {
+    background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.9);
+    animation: glint-legendary 3s ease-in-out infinite;
+}
+
+@keyframes glint-legendary {
+    0% { transform: rotate(0deg); opacity: 0.8; }
+    50% { transform: rotate(180deg); opacity: 1; }
+    100% { transform: rotate(360deg); opacity: 0.8; }
+}
+
+.rarity-legendary .rarity-tag {
+    color: #FFD700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.9);
+}
+
+.album-cover::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 7px;
+    z-index: -1;
+}
+
+.rarity-common .album-cover::after {
+    background: linear-gradient(45deg, #ffffff, #c0c0c0);
+    animation: glint-common 2s infinite;
+}
+
+.rarity-uncommon .album-cover::after {
+    background: linear-gradient(45deg, #4CAF50, #81C784);
+    animation: glint-uncommon 2s infinite;
+}
+
+.rarity-rare .album-cover::after {
+    background: linear-gradient(45deg, #2196F3, #90CAF9);
+    animation: glint-rare 2s infinite;
+}
+
+@keyframes glint-common {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.3; }
+}
+
+@keyframes glint-uncommon {
+    0% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.4; }
+}
+
+@keyframes glint-rare {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.rarity-unique .album-cover::before {
+    background: linear-gradient(45deg, #FF00FF, #00FFFF, #FF00FF);
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0.9);
+    animation: glint-unique 2s ease-in-out infinite;
+}
+
+@keyframes glint-unique {
+    0% { transform: rotate(0deg) scale(1); opacity: 0.9; }
+    50% { transform: rotate(180deg) scale(1.1); opacity: 1; }
+    100% { transform: rotate(360deg) scale(1); opacity: 0.9; }
+}
+
+.rarity-unique .rarity-tag {
+    color: #FF00FF;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.9);
+}
+
+.album-cover::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 7px;
+    z-index: -1;
+}
+
+.rarity-common .album-cover::after {
+    background: linear-gradient(45deg, #ffffff, #c0c0c0);
+    animation: glint-common 2s infinite;
+}
+
+.rarity-uncommon .album-cover::after {
+    background: linear-gradient(45deg, #4CAF50, #81C784);
+    animation: glint-uncommon 2s infinite;
+}
+
+.rarity-rare .album-cover::after {
+    background: linear-gradient(45deg, #2196F3, #90CAF9);
+    animation: glint-rare 2s infinite;
+}
+
+@keyframes glint-common {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.3; }
+}
+
+@keyframes glint-uncommon {
+    0% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.4; }
+}
+
+@keyframes glint-rare {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
 }
 
 .dice {
@@ -183,6 +387,27 @@ body {
     display: flex;
     gap: 10px;
     align-items: center;
+}
+
+.rarity-tag {
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.rarity-common .rarity-tag {
+    color: #e0e0e0;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+.rarity-uncommon .rarity-tag {
+    color: #69F0AE;
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.7);
+}
+
+.rarity-rare .rarity-tag {
+    color: #40C4FF;
+    text-shadow: 0 0 5px rgba(33, 150, 243, 0.7);
 }
 
 .inventory-item img {
