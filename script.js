@@ -210,7 +210,7 @@ const songs = [
 
 // Initialize variables at the top
 const inventory = [];
-const usedSongs = new Set();  // Add this line to fix the error
+const usedSongs = new Set();
 const dice = document.getElementById('dice');
 const currentSong = document.getElementById('current-song');
 const inventoryList = document.getElementById('inventory-list');
